@@ -49,6 +49,7 @@ public class GameHandler : MonoBehaviour
         if (isPlaying)
         {
             Timer -= Time.deltaTime;
+            TimerText.text = Timer.ToString("F2");
 
             if (Timer <= 0)
             {
@@ -56,6 +57,9 @@ public class GameHandler : MonoBehaviour
                 isPlaying = false;
             }
         }
+
+        if (!isPlaying)
+            TimerText.text = "Shoot Cube to Start";
 
         ScoreText.text = "Score: " + Score.ToString();
 
@@ -85,7 +89,7 @@ public class GameHandler : MonoBehaviour
         
         */
 
-        TimerText.text = Timer.ToString("F2");
+        
 
     }   
 
